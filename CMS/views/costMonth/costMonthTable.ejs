@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>CostTable</h1>
+    <table border="1">
+      <th>PerMonth</th>
+      <th>Income</th>
+      <th></th>
+      <th></th>
+      <tbody>
+        <% for(var i=0;i<month.length;i++) {%>
+          <tr>
+            <td><%= month[i].permonth%></td>
+            <td><%= month[i].income%></td>
+            <td> <a href="/updateDataCost/<%=month[i]._id%>"> <input type="button" name="btn" value="Update"></a></td>
+            <td> <input type="button" name="btn3" value="Delete" onclick="del('<%=month[i]._id%>')"> </td>
+          </tr>
+          <% }%>
+      </tbody>
+    </table>
+  </body>
+  <script type="text/javascript">
+    function del(id){
+      var y=confirm("Are you sure");
+      if(y) location.href="/deleteMonthData/"+id;
+    }
+  </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Expense Update</h1>
+    <form class="" action="/updateDataExpense" method="post">
+      <input type="hidden" name="id" value="<%=expense._id%>">
+       <label for="">Medicine</label>
+       <input type="text" name="medicine" value="<%=expense.medicine %>"><p>
+       <label for="">Cost</label>
+       <input type="text" name="cost" value="<%=expense.cost %>"><p>
+
+       <input type="submit" name="btn" value="Update">
+       <input type="button" name="btn" value="Cancel" onclick="do()">
+     </form>
+
+</body>
+<script type="text/javascript">
+  function do(){
+    location.href="/returnDataExpense";
+  }
+</script>
+</html>

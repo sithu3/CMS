@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Reception Update</h1>
+    <form class="" action="/updateDataDischargePatient" method="post">
+     <input type="hidden" name="id" value="<%=discharge._id%>">
+      <label for="">Name :</label>
+      <input type="text" name="name" value="<%=discharge.name%>"><p>
+      <label for="">Doctor :</label>
+      <input type="text" name="doctor" value="<%=discharge.doctor%>"><p>
+      <label for="">Prescription :</label>
+      <input type="text" name="prescript" value="<%=discharge.prescript%>"><p>
+        <input type="submit" name="btn" value="Update">
+        <input type="button" name="btn" value="Cancel" onclick="del();">
+    </form>
+  </body>
+  <script type="text/javascript">
+    function del(){
+      location.href="/returnDataDischargePatient";
+    }
+  </script>
+</html>

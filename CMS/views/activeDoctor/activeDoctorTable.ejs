@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Doctor Table</h1>
+    <table border="1">
+      <th>Doctor</th>
+      <th>Active</th>
+      <tbody>
+        <% for(var i=0;i<doc.length;i++) {%>
+          <tr>
+            <td><%= doc[i].doctor%></td>
+            <td><%= doc[i].active%></td>
+            <td><a href="/updateActiveDoctor/<%= doc[i]._id%>"> <input type="button" name="btn1" value="Update"></a> </td>
+            <td><input type="button" name="btn2" value="Delete" onclick="del('<%= doc[i]._id%>')"> </td>
+          </tr>
+          <% }%>
+      </tbody>
+    </table>
+  </body>
+  <script type="text/javascript">
+    function del(id){
+      var y=confirm("Are you sure");
+      if(y) location.href="/deleteDataActiveDoctor/"+id;
+
+    }
+  </script>
+</html>

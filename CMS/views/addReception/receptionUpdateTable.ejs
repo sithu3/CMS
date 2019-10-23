@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Reception Update</h1>
+    <form class="" action="/updateReceptionInfo" method="post">
+     <input type="hidden" name="id" value="<%=reception._id%>">
+     <label for="">PatientId:</label>
+     <input type="text" name="patientid" value="<%=reception.patientid %>"><p>
+      <label for="">Name:</label>
+      <input type="text" name="name" value="<%=reception.name %>"><p>
+      <label for="">Address:</label>
+      <input type="text" name="address" value="<%=reception.address %>"><p>
+      <label for="">PhoneNo:</label>
+      <input type="text" name="phno" value="<%=reception.phno %>"><p>
+      <input type="submit" name="btn" value="Update">
+      <input type="button" name="btn" value="Cancel" onclick="go();">
+    </form>
+  </body>
+  <script type="text/javascript">
+  function go(){
+    location.href="/returnReceptionData";
+}
+  </script>
+</html>

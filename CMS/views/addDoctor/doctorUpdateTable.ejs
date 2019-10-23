@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <!-- <script type="text/javascript">
+      $(document).ready()=>{
+
+
+            if(<%= doctor.treatDay%> == 'Monday')
+              $("#select").val('Monday');
+              else if(<%= doctor.treatDay%> == 'Tuseday')
+                $("#select").val('Tuseday');
+                else if(<%= doctor.treatDay%> == 'Wednesday')
+                  $("#select").val('Wednesday');
+                  else if(<%= doctor.treatDay%> == 'Thuraday')
+                    $("#select").val('Thuraday');
+                    else if(<%= doctor.treatDay%> == 'Friday')
+                      $("#select").val('Friday');
+                      else if(<%= doctor.treatDay%> == 'Saturday')
+                        $("#select").val('Saturday');
+                        else if(<%= doctor.treatDay%> == 'Sunday')
+                          $("#select").val('Sunday');
+
+
+            if(<%= doctor.activeInactive%> == 'Active')
+            $("#check_active").attr('checked', true);
+            else if(<%= doctor.activeInactive%> == 'Inactive')
+            $("#check_inactive").attr('checked', true);
+        });
+</script> -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+ $(document).ready(()=>{
+
+
+            if(<%= doctor.treatDay == 'Monday'%>)
+            $("#select").val('Monday')
+            else if(<%= doctor.treatDay == 'Tuseday'%>)
+            $("#select").val('Tuseday')
+            else if(<%= doctor.treatDay == 'Wednesday'%>)
+            $("#select").val('Wednesday')
+            else if(<%= doctor.treatDay == 'Thuraday'%>)
+            $("#select").val('Thuraday')
+            else if(<%= doctor.treatDay == 'Friday'%>)
+            $("#select").val('Friday')
+            else if(<%= doctor.treatDay == 'Saturday'%>)
+            $("#select").val('Saturday')
+            else if(<%= doctor.treatDay == 'Sunday'%>)
+            $("#select").val('Sunday')
+
+
+
+
+        });
+</script>
+  </head>
+  <body>
+    <h1>Doctor Update Table</h1>
+    <form  action="/updateDoctorInfo" method="post">
+      <input type="hidden" name="id" value="<%=doctor._id%>">
+      <label for="">Name:</label>
+      <input type="text" name="name"  value="<%=doctor.name%>"><p>
+      <label for="">Address:</label>
+      <input type="text" name="address"  value="<%=doctor.address%>"><p>
+      <label for="">PhoneNo:</label>
+      <input type="text" name="phno"  value="<%=doctor.phno%>"><p>
+      <label for="">Treat:</label>
+      <input type="text" name="treat"  value="<%=doctor.treat%>"><p>
+      <label for="">Treat_Day:</label>
+      <select name="treatDay" id="select">
+      <option value="Monday">Monday</option>
+      <option value="Tuseday">Tuseday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thuraday">Thuraday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+      </select><p>
+      <label for="">Start_Time:</label>
+      <input type="time" name="startTime"  value="<%=doctor.startTime%>"><p>
+      <label for="">Start_Time:</label>
+      <input type="time" name="endTime"  value="<%=doctor.endTime%>"><p>
+      <input type="text" name="count"  value="<%=doctor.count%>"><p>
+      <input type="text" name="percentage"  value="<%=doctor.percentage%>"><p>
+      <input type="Submit" name="" value="Submit">
+      <input type="button" name="" value="Cancel" onclick="can()">
+    </form>
+  </body>
+  <script type="text/javascript">
+    function can(){
+    location.href="/returnValueDoctor"
+    }
+  </script>
+</html>

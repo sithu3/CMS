@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Appointment Update</h1>
+    <form class="" action="/updateDataAppointment" method="post">
+     <input type="hidden" name="id" value="<%=appointment._id%>">
+      <label for="">Name:</label>
+      <input type="text" name="name" value="<%=appointment.name %>"><p>
+      <label for="">Day :</label>
+      <input type="text" name="day" value="<%=appointment.day %>"><p>
+      <label for="">Time :</label>
+      <input type="text" name="time" value="<%=appointment.time %>"><p>
+      <label for="">Doctor :</label>
+      <input type="text" name="doctor" value="<%=appointment.doctor %>"><p>
+      <textarea name="treat" rows="8" cols="30" value="<%= appointment.treatment%>"></textarea>
+      <input type="submit" name="btn" value="Update">
+      <input type="button" name="btn" value="Cancel" onclick="del();">
+    </form>
+  </body>
+  <script type="text/javascript">
+    function del(){
+      location.href="/returnDataAppointment";
+    }
+  </script>
+</html>

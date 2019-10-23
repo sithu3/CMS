@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <h1>Patient Detail Table</h1>
+      <table border="1">
+        <th>Email</th>
+        <th>Password</th>
+
+        <tbody>
+          <% for(var i=0;i<usersignin.length;i++) {%>
+            <tr>
+              <td><%= usersignin[i].email%></td>
+              <td><%= usersignin[i].password%></td>
+
+            <% }%>
+        </tbody>
+      </table>
+    </body>
+
+  </html>

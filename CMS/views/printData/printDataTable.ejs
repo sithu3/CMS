@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+      <th>Name</th>
+      <th>Amount</th>
+      <th></th>
+      <th></th>
+      </thead>
+      <tbody>
+      <% for(var i=0;i<amount.length;i++) {%>
+        <tr>
+          <td><%= amount[i].name%></td>
+          <td><%= amount[i].amount%></td>
+          <td> <a href="/updatedata/<%=amount[i]._id%>"> <input type="submit" name="sub" value="Update"></a> </td>
+          <td> <input type="button" name="btn" value="Delete" onclick="del('<%=amount[i]._id%>')"> </td>
+        </tr>
+      <% }%>
+      </tbody>
+    </table>
+  </body>
+  <script type="text/javascript">
+    function del(id){
+      var y=confirm("Are you sure");
+      if(y) location.href="/delete/"+id;
+    }
+  </script>
+</html>

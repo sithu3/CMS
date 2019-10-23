@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Print Table</h1>
+    <table border="1">
+      <th>PatientName</th>
+      <th>DoctorName</th>
+      <th>Date</th>
+      <th>Suffer</th>
+      <th>TreatmentCost</th>
+      <th>MedicineCost</th>
+      <th>TotalCost</th>
+      <th></th>
+      <th></th>
+
+      <tbody>
+        <% for(var i=0;i<print.length;i++) {%>
+          <tr>
+
+            <td><%=print[i].pname%></td>
+            <td><%=print[i].doctorname%></td>
+            <td><%=print[i].date%></td>
+            <td><%=print[i].suffer%></td>
+            <td><%=print[i].treatmentcost%></td>
+            <td><%=print[i].medicinecost%></td>
+            <td><%=print[i].total%></td>
+            <td> <a href="/updatePrint/<%=print[i]._id%>"> <input type="button" name="btn" value="Update"> </a></td>
+            <td> <input type="button" name="btn3" value="Delete" onclick="del('<%=print[i]._id%>')"> </td>
+          </tr>
+          <% }%>
+      </tbody>
+    </table>
+  </body>
+  <script type="text/javascript">
+    function del(id){
+      var y=confirm("Are you sure");
+      if(y) location.href="/deleteDataPrint/"+id;
+    }
+  </script>
+</html>

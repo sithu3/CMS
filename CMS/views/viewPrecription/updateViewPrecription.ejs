@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Reception Update</h1>
+    <form class="" action="/updateDataViewPrectription" method="post">
+     <input type="hidden" name="id" value="<%=prescription._id%>">
+     <label for="">Patient Id :</label>
+     <input type="text" name="pid" value="<%=prescription.pid%>"><p>
+      <label for="">Name :</label>
+      <input type="text" name="name" value="<%=prescription.name%>"><p>
+      <label for="">Disease :</label>
+      <input type="text" name="disease" value="<%=prescription.disease%>"><p>
+      <label for="">Prescription :</label>
+      <input type="text" name="prescript" value="<%=prescription.prescript%>"><p>
+        <label for="">Treat :</label>
+        <input type="text" name="treat" value="<%=prescription.treat%>"><p>
+        <input type="submit" name="btn" value="Update">
+        <input type="button" name="btn" value="Cancel" onclick="del();">
+    </form>
+  </body>
+  <script type="text/javascript">
+    function del(){
+      location.href="/returnDataViewPrecription";
+    }
+  </script>
+</html>

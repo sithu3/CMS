@@ -1,0 +1,24 @@
+{
+  "name": "last-cms",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "db": "mongod --dbpath D:/workspace/db"
+  },
+  "dependencies": {
+    "alerts": "^0.1.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "express-session": "^1.16.2",
+    "http-errors": "~1.6.2",
+    "mongoose": "^5.5.15",
+    "morgan": "~1.9.0",
+    "popups": "^1.1.3",
+    "print-js": "^1.0.61",
+    "session": "^0.1.0"
+  }
+}

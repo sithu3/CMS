@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Print Form</h1>
+    <form class="" action="/addPrint" method="post">
+      <label for="">PatientName:</label>
+      <input type="text" name="pname" value=""><p>
+      <label for="">DoctorName:</label>
+      <input type="text" name="doctorname" value=""><p>
+      <label for="">Date:</label>
+      <input type="date" name="date" value=""><p>
+      <label for="">Suffer:</label>
+      <input type="text" name="suffer" value=""><p>
+      <label for="">TreatmentCost:</label>
+      <input type="text" name="treatmentcost" value=""><p>
+      <label for="">MedicineCost:</label>
+      <input type="text" name="medicinecost" value=""><p>
+      <label for="">TotalCost:</label>
+      <input type="text" name="total" value=""><p>
+      <input type="submit" name="btn1" value="Submit">
+      <input type="button" name="btn2" value="Cancel" onclick="remove()">
+    </form>
+  </body>
+  <script type="text/javascript">
+    function remove(){
+      location.href="/print";
+    }
+  </script>
+</html>

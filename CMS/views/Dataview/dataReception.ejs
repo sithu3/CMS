@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <h1>Patient Detail Table</h1>
+      <table border="1">
+        <th>Email</th>
+        <th>Password</th>
+        <th></th>
+        <th></th>
+        <tbody>
+          <% for(var i=0;i<receptionsignin.length;i++) {%>
+            <tr>
+              <td><%= receptionsignin[i].email%></td>
+              <td><%= receptionsignin[i].password%></td>
+              <td> <a href="/updateReceptionSignIn/<%=receptionsignin[i]._id%>"> <input type="button" name="btn" value="Update"></a></td>
+              <td> <input type="button" name="btn3" value="Delete" onclick="del('<%=receptionsignin[i]._id%>')"> </td>
+            <% }%>
+        </tbody>
+      </table>
+    </body>
+    <script type="text/javascript">
+      function del(id){
+        var y=confirm("Are you sure");
+        if(y) location.href="/deleteReceptionSignIn/"+id;
+      }
+    </script>
+  </html>

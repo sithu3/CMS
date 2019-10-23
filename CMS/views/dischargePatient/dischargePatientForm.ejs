@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/css/style.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/vendor/vector-map/jqvmap.css">
+    <link href="assets/vendor/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/daterangepicker/daterangepicker.css" />
+    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <link rel="stylesheet" href="colorlib-regform-17/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
+
+    <!-- STYLE CSS -->
+
+    <link rel="stylesheet" href="colorlib-regform-17/css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(()=>{
+
+      var res=0;
+      <% for(var i=0; i<doctor.length; i++){ %>
+         if(myDoctorID.value=="<%=doctor[i]._id%>")
+         result.value="<%=doctor[i].name%>"
+      <% } %>
+
+
+      <% for(var i=0; i<amount.length; i++){ %>
+      res+=<%= amount[i].amount%>
+      <% } %>
+      if(txtLab.value=='Lab')
+      res+=10000;
+      else
+      res+=5000;
+
+      if(myType.value=="Lab")
+      myLab.value="Lab+Doctor Fee :10000ks"
+      else
+      myLab.value="Doctor Fee      :5000ks"
+
+      txtLastTotal.value=res;
+
+
+            $("#search").click(function(){
+              <% for(var i=0; i<medicine.length; i++){ %>
+              if(medicineID.value=="<%= medicine[i].name%>"){
+              costID.value=<%= medicine[i].price%>;
+              }
+              <% } %>
+            })
+            $('#mm').click(function(){
+               printJS({ printable: 'print_result', type: 'html', header: 'PrintJS - Form Element Selection',targetStyles:['*'] })
+});
+        });
+
+</script>
+</head>
+<style type="text/css">
+/*
+      #hide
+      {
+        margin-top: 5px;
+        width: 500px;
+        height: 400px;
+        border:px solid black;
+        display: none;
+      }  */
+      #img3
+      {
+
+          height: 150px;
+          width: 300px;
+      }
+      table
+      {
+        background-color: white;
+      }
+    #img1
+    {
+        height: 550px;
+    }
+    #inner1
+    {
+        position: relative;
+         margin-top: -16px;
+       }
+    #di
+    {
+        position: relative;
+        margin-top: 100px;
+    }
+    #div11
+    {
+        margin-top: -40px;
+        margin-left: 15px;
+    }
+
+         /* #well1
+             {
+                 width:500px;
+                 height: 420px;
+                background-color: white;
+
+             }
+                .well
+                {
+                    width: 1000px;
+                    height: 650px;
+                background-color: white;
+                    margin-top: 25px;
+                    margin-left: 5px;
+
+                } */
+                #addproduct
+    {
+        margin-top: 100px;
+    }
+    </style>
+<body>
+
+        <div class="container">
+                <div class="row">
+                <div class="modal" id="addproduct" tabindex="-1" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                        <h3>DischargePatient<a href="" class="pull-right">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&times;</a></h3><br>
+
+                                </div>
+                                <div class="modal-body">
+
+
+                                        <div class="form-wrapper">
+                                            <input type="text" placeholder="Particular" class="form-control"> <i class="zmdi zmdi-time"></i></div>
+
+                                        <div class="form-wrapper">
+                                            <input type="text" placeholder="Amount" class="form-control">
+                                            <i class="zmdi zmdi-money"></i>
+                                        </div>
+
+                                       <div class="form-group">
+                                           <button id="click">Submit
+                                            <i class="zmdi zmdi-arrow-right"></i>
+                                        </button>
+                                        <button id="click1">Cancel
+                                            <i class="zmdi zmdi-arrow-right"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper" id="con">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html">Clinic Management System</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item">
+                            <div id="custom-search" class="top-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..">
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Notification</div>
+                                    <div class="notification-list">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action active">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">John Abraham </span>is now following you
+                                                        <div class="notification-date">2 days ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown connection">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
+                                <li class="connection-list">
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/github.png" alt="" > <span>Github</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/dribbble.png" alt="" > <span>Dribbble</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/dropbox.png" alt="" > <span>Dropbox</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/mail_chimp.png" alt="" ><span>Mail chimp</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/slack.png" alt="" > <span>Slack</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="conntection-footer"><a href="#">More</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">Clinic Management System </h5>
+                                    <span class="status"></span><span class="ml-2">Available</span>
+                                </div>
+                                <a class="dropdown-item" href="log_in_reception.html"><i class="fas fa-user mr-2"></i>Account</a>
+
+                                <a class="dropdown-item" href="sign_in.html"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="wrapper" style="background-image: url('images/cost.jpg');">
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Reception</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+
+                                Reception Control
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="/patientRegistration" ><i class="fa fa-fw fa-user-circle"></i>Add Patient <span class="badge badge-success">6</span></a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="/token" ><i class="fa fa-fw fa-user-circle"></i>Token <span class="badge badge-success">6</span></a>
+
+                            </li>
+                             <li class="nav-item ">
+                                <a class="nav-link active" href="/viewPrecription" ><i class="fa fa-fw fa-user-circle"></i>View Presciption<span class="badge badge-success">6</span></a>
+
+                            </li>
+                             <li class="nav-item ">
+                                <a class="nav-link active" href="/dischargePatient"><i class="fa fa-fw fa-user-circle"></i>Discharge Patient<span class="badge badge-success">6</span></a>
+
+                            </li>
+                            <li class="nav-item ">
+                                    <a class="nav-link" href="/appointment"><i class="fa fa-fw fa-user-circle"></i>Add Appointment<span class="badge badge-success">6</span></a>
+
+                            </li>
+                            <li class="nav-item ">
+                                    <a class="nav-link" href="/viewAppointment"><i class="fa fa-fw fa-user-circle"></i>View Appointment<span class="badge badge-success">6</span></a>
+
+                            </li>
+                                <li class="nav-item ">
+                                   <a class="nav-link" href="/changeReceptionPassword"><i class="fa fa-fw fa-user-circle"></i>Change Password <span class="badge badge-success">6</span></a>
+
+                               </li>
+
+
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/"><i class="fas fa-fw fa-inbox"></i>Log Out <span class="badge badge-secondary">New</span></a>
+
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+
+
+
+
+                         <br>
+                         <div class="container">
+                            <div class="row">
+
+                             <div class="col-md-12">
+
+
+                                <div class="inner">
+                                    <div class="image-holder">
+                                        <img id="img1" src="image/cost1.jpg" alt="">
+                                    </div>
+                                    <form action="/addDischargePatient" method="post">
+                                      <div class="col-md-12">
+                                        <h3> Prescription</h3>
+                                        <br>
+
+                                        
+                                        <div class="form-wrapper">
+                                            <input type="lable"  class="form-control" name="name" value="<%=prescription[0].name%>" disabled>
+                                            <i class="zmdi zmdi-account"></i>
+                                        </div>
+                                        <div class="form-wrapper">
+                                            <input type="label"  class="form-control" name="disease" value="<%=prescription[0].disease%>" disabled>
+                                            <i class="zmdi zmdi-hospital"></i>
+                                        </div>
+                                        <div class="form-wrapper">
+                                            <input type="label"  class="form-control" name="disease" value="<%=prescription[0].prescript%>" disabled>
+                                            <i class="zmdi zmdi-hospital"></i>
+                                        </div>
+                                        <div class="form-wrapper">
+                                            <input type="label"  class="form-control" name="disease" value="<%=prescription[0].type%>" disabled id="myType">
+                                            <i class="zmdi zmdi-hospital"></i>
+                                        </div>
+                            </form>
+                                </div>
+                                </div>
+
+
+
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="container">
+                                    <div class="row">
+
+                                     <div class="col-md-6">
+
+                                         <form class="" action="/addPrintData" method="post">
+                                        <div class="inner">
+                                            <div class="container">
+                                                <div class="row">
+
+                                                    <div class="col-md-6">
+                                            <div class="image-holder">
+                                                <img style="width:300px;" id="img3" src="image/expense.png" alt="">
+                                            </div>
+                                                    </div>
+                                                   <div class="col-md-6">
+
+                                              <h2>Medicin Search</h2><br>
+                                              <div class="form-wrapper">
+                                                <input type="text" name="medicine"  id="medicineID" class="form-control"> 	<i class="zmdi zmdi-account"></i></div>
+
+                                            <div class="form-wrapper">
+                                                <input type="text" name="cost"  id="costID" class="form-control">
+                                                <i class="zmdi zmdi-money"></i>
+
+                                            </div>
+                                        </div>
+
+                                        </div>
+
+                                                <div class="container">
+                                                    <div class="row">
+                                                    <div class="col-md-6">
+                                                    <!-- <button class="btn " id="search">Search  <i class="zmdi zmdi-arrow-right"></i></button></div>
+                                                     <div class="col-md-6"> -->
+                                                    <button class="btn " id="search">Add  <i class="zmdi zmdi-arrow-right"></i></button></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </div>
+                                  </form>
+                                        </div>
+
+
+                                        <div class="col-md-6" >
+
+                                              <form action="/print" method="post" id="print_result">
+                                            <div class="card">
+                                            <div class="card-header"> <h3>Clinic Name</h3></div>
+                                              <div class="panel-body">
+
+                                                          <div class="inner">
+                                                              <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <label for="dname">
+
+                                                                        <div class="form-group">
+                                                                          <input type="hidden" value="<%= token.doctorName%>" id="myDoctorID">
+                                                                                <input  style="width: 200px;" type="text" id="result" class="form-control">
+                                                                                <input  style="width: 200px;" type="text" value="<%= token.date%>" id="myDate" name="dataDate" class="form-control"> </div>
+                                                                              </label> </div>
+                                                                  <div class="col-md-12">
+                                                                        <label for="pname">
+                                                                        <div class="form-group">
+                                                                                <input style="width: 120px;" type="text" value="<%= token.patientName%>" class="form-control">
+                                                                                <input  style="width: 120px;" type="text" value="<%= token.desease%>" class="form-control">&emsp;
+                                                                               &emsp; <input  style="width: 120px;" type="text" name="disease" value="<%=prescription[0].type%>" id="txtLab" class="form-control">
+                                                                            </div>
+                                                                   </label> </div>
+                                                                    <div class="col-md-12">
+                                                                            <div class="inner" id="inner1">
+                                                                                    <div class="row">
+                                                                                           <div  style="max-height: 130px;overflow:auto;width:420px;">
+                                                                         <table class="table table-bordered table-striped">
+                                                                           <th>Name</th>
+                                                                           <th>Amount</th>
+                                                                           <th></th>
+
+
+                                                                           <tbody>
+                                                                           <% for(var i=0;i<amount.length;i++) {%>
+                                                                             <tr>
+                                                                               <td><%= amount[i].name%></td>
+                                                                               <td><%= amount[i].amount%></td>
+                                                                               <!-- <td> <a href="/updatedata/<%=amount[i]._id%>"> <input type="submit" name="sub" value="Update"></a> </td> -->
+                                                                               <!-- <td> <input type="button" name="btn" value="Delete" onclick="del('<%=amount[i]._id%>')"> </td> -->
+                                                                                 <td style="text-align: center;"><span class="fa fa-trash" onclick="del('<%=amount[i]._id%>')"></span></td>
+                                                                             </tr>
+                                                                           <% }%>
+                                                                           </tbody>
+                                                                         </table>
+                                                                       </div>
+
+
+                                                               </label>
+                                                                     </div>
+                                                                   </div>
+                                                                   </div>
+
+                                                                        <div class="col-md-6 ">
+                                                                                <div class="form-wrapper">
+
+                                                                                        <table>
+
+                                                                                        <tr>
+                                                                                            <td> <input type="text" id="myLab" > </td>
+
+                                                                                        </tr>
+
+                                                                                        </table>
+                                                                                        </div>
+
+
+                                                                        </div>
+                                                                        <div class="col-md-6 ">
+                                                                                <div class="form-wrapper">
+                                                                                        Final Amount:<label for="amount">
+                                                                                            <div class="form-wrapper">
+                                                                                                <input style="font-size: x-large;text-decoration-color: black;" type="text" id="txtLastTotal" name="dataTotal" class="form-control">
+                                                                                                <i class="zmdi zmdi-money" style="font-size: 17px"></i>
+
+                                                                                            </div>
+
+                                                                                        </label>
+
+
+
+                                                                                        </div>
+
+                                                                      </div>
+
+                                                                <div class="container" id="div11">
+                                                                      <div class="row">
+                                                                      <div>
+                                                                      <button class="btn " name="btn"    type="submit">Save  <i class="zmdi zmdi-arrow-right"></i></button></div>
+                                                              </div>
+                                                          </div>
+                                                                    </div>
+
+
+                                                             <br>
+
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </form>
+                                    <div class="container" id="div11">
+                                          <div class="row">
+                                          <div>
+                                          <button class="btn "  id="mm" >Print  <i class="zmdi zmdi-arrow-right"></i></button></div>
+                                    </div>
+                                    </div>
+                              </div>
+                              </div>
+
+
+                                            </div>
+                                        </div>
+                            </div>
+                            </div>
+                        </div>
+                            </div>
+
+
+
+
+                                 </div>
+
+
+
+                          <script type="text/javascript" src="js/jquery.min.js"> </script>
+
+
+
+
+
+
+
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+
+                    <!-- jquery 3.3.1  -->
+                    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+                    <!-- bootstap bundle js -->
+                    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+                    <!-- slimscroll js -->
+                    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+                    <!-- chart chartist js -->
+                    <script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+                    <script src="assets/vendor/charts/chartist-bundle/Chartistjs.js"></script>
+                    <script src="assets/vendor/charts/chartist-bundle/chartist-plugin-threshold.js"></script>
+                    <!-- chart C3 js -->
+                    <script src="assets/vendor/charts/c3charts/c3.min.js"></script>
+                    <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+                    <!-- chartjs js -->
+                    <script src="assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
+                    <script src="assets/vendor/charts/charts-bundle/chartjs.js"></script>
+                    <!-- sparkline js -->
+                    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+                    <!-- dashboard finance js -->
+                    <script src="assets/libs/js/dashboard-finance.js"></script>
+                    <!-- main js -->
+                    <script src="assets/libs/js/main-js.js"></script>
+                    <!-- gauge js -->
+                    <script src="assets/vendor/gauge/gauge.min.js"></script>
+                    <!-- morris js -->
+                    <script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+                    <script src="assets/vendor/charts/morris-bundle/morris.js"></script>
+                    <script src="assets/vendor/charts/morris-bundle/morrisjs.html"></script>
+                    <!-- daterangepicker js -->
+                    <script src="../../../../cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+                    <script src="../../../../cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+                    <script>
+                        function res()
+                        {
+                            alert("Add doctor successful");
+                        }
+                    </script>
+    <script>
+            $("#aa").click(function()
+            {
+                $("#addproduct").show();
+                $("#con").fadeTo(500,0.3);
+                $("#con1").fadeTo(500,0.3);
+                $("#img4").fadeTo(500,0.3);
+            })
+              $("#bb").click(function()
+             {
+              $("#addproduct").show();
+              $("#con").fadeTo(500,0.5);
+              $("#img4").fadeTo(500,0.5);
+                })
+            $("#cc").click(function()
+             {
+             $("#addproduct").show();
+                $("#con").fadeTo(500,0.5);
+               $("#con1").fadeTo(500,0.5);
+               $("#img4").fadeTo(500,0.5);
+            })
+
+
+        </script>
+        <script>
+
+          function del(id){
+            var y=confirm("Are you sure");
+            if(y) location.href="/delete/"+id;
+          }
+
+            function res()
+            {
+                alert("Add doctor successful");
+            }
+
+            function success(){
+              alert("Print Successful!")
+            }
+        </script>.
+
+                </body>
+                </html>

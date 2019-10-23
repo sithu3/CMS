@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Doctor Table</h1>
+    <table border="1">
+      <th>Name</th>
+      <th>Address</th>
+      <th>PhoneNo</th>
+      <th>Treat</th>
+      <th>Treat_Day</th>
+      <th>Start_Time</th>
+      <th>End_Time</th>
+      <th>Count</th>
+      <th>Percentage</th>
+      <th>Update</th>
+      <th>Delete</th>
+      <tbody>
+        <% for(var i=0;i<doctor.length;i++){%>
+          <tr>
+            <td><%=doctor[i].name %></td>
+            <td><%=doctor[i].address %></td>
+            <td><%=doctor[i].phno %></td>
+            <td><%=doctor[i].treat %></td>
+            <td><%=doctor[i].treatDay %></td>
+            <td><%=doctor[i].startTime %></td>
+            <td><%=doctor[i].endTime %></td>
+            <td><%=doctor[i].count %></td>
+            <td><%=doctor[i].percentage %></td>
+            <td><a href="/updateDoctorInsert/<%=doctor[i]._id%>"><input type="button" name="btn" value="Update"></a></td>
+           <td><input type="button" name="bbtn" onclick="del('<%=doctor[i]._id%>')" value="Delete"></td>
+
+            </tr>
+            <% }%>
+      </tbody>
+    </table>
+  </body>
+
+<script type="text/javascript">
+  function del(id){
+    var y=confirm("Are you sure");
+    if(y) location.href="/deleteDoctorInfo/"+id;
+  }
+</script>
+</html>

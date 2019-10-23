@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Patient History Form</h1>
+    <form class="" action="/addPatientHistory" method="post">
+      <label for="">Name:</label>
+      <input type="text" name="name" value=""><p>
+      <label for="">Disease:</label>
+      <input type="text" name="disease" value=""><p>
+      <label for="">Medicine:</label>
+      <input type="text" name="medicine" value=""><p>
+      <label for="">Date:</label>
+      <input type="date" name="date" value=""><p>
+      <label for="">Doctor:</label>
+      <input type="text" name="doctor" value=""><p>
+      <input type="submit" name="btn" value="Submit">
+      <input type="button" name="btn" value="Cancel" onclick="can();">
+    </form>
+  </body>
+<script type="text/javascript">
+   function can() {
+     location.href="/patientHistory";
+   }
+</script>
+</html>

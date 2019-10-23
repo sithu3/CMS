@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Expense Update</h1>
+    <form class="" action="/updateReceptionData" method="post">
+      <input type="hidden" name="id" value="<%=receptionsignin._id%>">
+       <label for="">Email</label>
+       <input type="text" name="email" value="<%=receptionsignin.email %>"><p>
+       <label for="">Password</label>
+       <input type="text" name="password" value="<%=receptionsignin.password %>"><p>
+
+       <input type="submit" name="btn" value="Update" >
+       <input type="button" name="btn" value="Cancel" onclick="do()">
+     </form>
+
+</body>
+<script type="text/javascript">
+  function do(){
+    location.href="/dataReception";
+  }
+</script>
+</html>

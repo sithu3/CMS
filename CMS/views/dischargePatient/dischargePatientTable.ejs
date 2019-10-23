@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Discharge Table</title>
+  </head>
+  <body>
+    <h1>Clinic Management System</h1>
+    <table border='1'>
+      <thead>
+        <!-- <th>PId</th> -->
+        <th>Name</th>
+        <th>Doctor</th>
+        <th>Prescription</th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% for(var i=0; i<discharge.length; i++){ %>
+          <tr>
+            <!-- <td><%= discharge[i].pid %></td> -->
+            <td><%= discharge[i].name %></td>
+            <td><%= discharge[i].doctor %></td>
+            <td><%= discharge[i].prescript %></td>
+            <td><a href="/updateDischargePatient/<%= discharge[i]._id%>"> <input type="button" name="btn1" value="Update"></a> </td>
+            <td><input type="button" name="btn2" value="Delete" onclick="del('<%= discharge[i]._id%>')"> </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+  <script type="text/javascript">
+    function del(id){
+      var y=confirm("Are you sure");
+      if(y) location.href="/deleteDischargePatient/"+id;
+
+    }
+  </script>
+</html>

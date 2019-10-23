@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login V9</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="public/vender/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="public/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="public/vender/animate/animate.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="public/vender/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="public/vender/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="public/vender/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="public/vender/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<style type="text/css">
+  #btn input{margin-top: 60px;}
+  #btn a{text-decoration: none;}
+
+</style>
+<body>
+
+
+  <div class="container-login100" style="background-image: url('doctor1.jpg');">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+      <form class="login100-form validate-form">
+        <span class="login100-form-title p-b-37">
+          Clinic Management System
+        </span>
+
+        <div id="btn">
+
+         <div class="container-login100-form-btn">
+        <input type="button" class="login100-form-btn" name="btn_reception" onclick="reception()" value="Reception">
+        </div>
+
+          <div class="container-login100-form-btn">
+         <input type="button" class="login100-form-btn"  name="btn_admin" onclick="admin()" value="Admin">
+        </div>
+
+         <div class="container-login100-form-btn">
+          <input type="button" class="login100-form-btn" name="btn_doctor" onclick="doctor()" value="Doctor">
+        </div>
+
+        <div class="container-login100-form-btn">
+        <input type="button" class="login100-form-btn" name="btn_user" onclick="user()" value="User">
+         </div>
+
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+
+
+
+  <div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+  <script src="public/vender/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="public/vender/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script src="public/vender/bootstrap/js/popper.js"></script>
+  <script src="public/vender/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="public/vender/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="public/vender/daterangepicker/moment.min.js"></script>
+  <script src="public/vender/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+  <script src="public/vender/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
+
+</body>
+  <script type="text/javascript">
+  function reception(){
+     location.href= "/check_reception"
+  }
+  function doctor(){
+     location.href= "/check_doctor"
+  }
+  function admin(){
+     location.href= "/check_admin"
+  }
+  function user(){
+     location.href= "/health/homehealth"
+  }
+  </script>
+</html>

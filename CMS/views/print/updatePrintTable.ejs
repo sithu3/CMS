@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Update Print</h1>
+    <form class="" action="/updateDataPrint" method="post">
+      <input type="hidden" name="id" value="<%=print._id%>">
+      <label for="">PatientName:</label>
+      <input type="text" name="pname" value="<%=print.pname%>"><p>
+      <label for="">DoctorName:</label>
+      <input type="text" name="doctorname" value="<%=print.doctorname%>"><p>
+      <label for="">Date:</label>
+      <input type="date" name="date" value="<%=print.date%>"><p>
+      <label for="">Suffer:</label>
+      <input type="text" name="suffer" value="<%=print.suffer%>"><p>
+      <label for="">TreatmentCost:</label>
+      <input type="text" name="treatmentcost" value="<%=print.treatmentcost%>"><p>
+      <label for="">MedicineCost:</label>
+      <input type="text" name="medicinecost" value="<%=print.medicinecost%>"><p>
+      <label for="">TotalCost:</label>
+      <input type="text" name="total" value="<%=print.total%>"><p>
+      <input type="submit" name="btnn" value="Update">
+      <input type="button" name="btnnn" value="Cancel" onclick="re()">
+    </form>
+  </body>
+  <script type="text/javascript">
+    function re(){
+      location.href="/returnDataPrint";
+    }
+  </script>
+</html>
+s

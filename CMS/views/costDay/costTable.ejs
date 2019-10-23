@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>CostTable</h1>
+    <table border="1">
+      <th>PerDay</th>
+      <th>Income</th>
+      <th></th>
+      <th></th>
+      <tbody>
+        <% for(var i=0;i<day.length;i++) {%>
+          <tr>
+            <td><%= day[i].perday%></td>
+            <td><%= day[i].income%></td>
+            <td> <a href="/updateDayCost/<%=day[i]._id%>"> <input type="button" name="btn" value="Update"></a></td>
+            <td> <input type="button" name="btn3" value="Delete" onclick="del('<%=day[i]._id%>')"> </td>
+          </tr>
+          <% }%>
+      </tbody>
+    </table>
+  </body>
+  <script type="text/javascript">
+    function del(id){
+      var y=confirm("Are you sure");
+      if(y) location.href="/deleteDayCost/"+id;
+    }
+  </script>
+</html>

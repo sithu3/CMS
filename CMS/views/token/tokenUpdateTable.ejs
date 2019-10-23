@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Update Token</h1>
+    <form class="" action="/updateDataToken" method="post">
+      <input type="hidden" name="id" value="<%=token._id%>">
+      <label for="">Patient Name</label>
+      <input type="text" name="patientName" value="<%=token.patientName%>"><p>
+        <label for="">Doctor:</label>
+        <select class="" name="doctorName" id="select" value="<%= token.doctorName%>">
+          <option value="Dr.MaMa" ></option>
+          <option value="Dr.HlaHla"></option>
+          <option value="Dr.HtunHtun"></option>
+        </select><p>
+      <label for="">Desease</label>
+      <input type="text" name="desease" value="<%=token.desease%>"><p>
+      <label for="">Date</label>
+      <input type="text" name="date" value="<%=token.date%>"><p>
+        <label for="">Count Token</label>
+        <input type="text" name="countToken" value="<%=token.countToken%>"><p>
+
+
+       <input type="submit" name="submit" value="Update">
+       <input type="button" name="btn" value="Cancel" onclick="go()">
+    </form>
+  </body>
+  <script type="text/javascript">
+    function go(){
+      location.href="/returnDataToken"
+    }
+
+
+  </script>
+</html>
